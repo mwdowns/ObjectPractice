@@ -10,9 +10,10 @@ class Person(object):
     def greet(self, other_person):
         self.greeting_count += 1
         print "Hello %s, I am %s" % (other_person.name, self.name)
-        for i in self.uniques:
-            if other_person != i:
-                self.uniques.append(other_name)
+        if other_person.name not in self.uniques:
+            self.uniques.append(other_person.name)
+        else:
+            pass
 
     def print_info(self):
         print "%s's email is %s and phone number is %s" % (self.name, self.email, self.phone)
@@ -40,10 +41,12 @@ billy = Person("Billy", "billy@yahoo.com", "778-448-5743")
 
 sonny.greet(jordan)
 sonny.greet(jordan)
-sonny.greet(jordan)
-jordan.greet(sonny)
-sonny.greetings_count()
-jordan.greetings_count()
+sonny.unique_greets()
+#jordan.greet(sonny)
+sonny.greet(billy)
+sonny.unique_greets()
+# sonny.greetings_count()
+# jordan.greetings_count()
 
 
 # print "Sonny's email is %s and phone is %s" % (sonny.email, sonny.phone)
