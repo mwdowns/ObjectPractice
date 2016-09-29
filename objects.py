@@ -5,15 +5,16 @@ class Person(object):
         self.phone = phone
         self.friends = []
         self.greeting_count = 0
-        self.uniques = []
+        self.uniques = set()
 
     def greet(self, other_person):
         self.greeting_count += 1
         print "Hello %s, I am %s" % (other_person.name, self.name)
-        if other_person.name not in self.uniques:
-            self.uniques.append(other_person.name)
-        else:
-            pass
+        self.uniques.add(other_person)
+        # if other_person.name not in self.uniques:
+        #     self.uniques.append(other_person.name)
+        # else:
+        #     pass
 
     def print_info(self):
         print "%s's email is %s and phone number is %s" % (self.name, self.email, self.phone)
