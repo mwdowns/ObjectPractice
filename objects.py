@@ -29,7 +29,7 @@ class Person(object):
         print self.greeting_count
 
     def __repr__(self):
-        return "" % (self.name, self.email, self.phone)
+        return "%s %s %s" % (self.name, self.email, self.phone)
 
     def unique_greets(self):
         print len(self.uniques)
@@ -48,6 +48,8 @@ sonny.greet(billy)
 sonny.unique_greets()
 # sonny.greetings_count()
 # jordan.greetings_count()
+
+print sonny
 
 
 # print "Sonny's email is %s and phone is %s" % (sonny.email, sonny.phone)
